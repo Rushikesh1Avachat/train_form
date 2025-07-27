@@ -27,6 +27,16 @@ const InfoPanel = ({ selectedSeats, filter, setFilter }) => {
           Show Available Seats
         </button>
         <button
+          onClick={() => setFilter("reset")}
+          className={`px-4 py-1 rounded text-sm font-medium border ${
+            filter === "reset"
+              ? "bg-gray-800 text-white"
+              : "bg-white text-gray-800 border-gray-600"
+          }`}
+        >
+          Reset Booking
+        </button>
+          <button
           onClick={() => setFilter("all")}
           className={`px-4 py-1 rounded text-sm font-medium border ${
             filter === "all"
@@ -34,7 +44,7 @@ const InfoPanel = ({ selectedSeats, filter, setFilter }) => {
               : "bg-white text-gray-800 border-gray-600"
           }`}
         >
-          Show All
+          Show All Booking
         </button>
       </div>
 
@@ -48,7 +58,7 @@ const InfoPanel = ({ selectedSeats, filter, setFilter }) => {
       </div>
 
       <div className="flex flex-wrap gap-2 justify-center">
-        {selectedSeats.slice(0, 7).map((seat) => (
+        {selectedSeats.slice(0, 80).map((seat) => (
           <input
             key={seat}
             type="text"

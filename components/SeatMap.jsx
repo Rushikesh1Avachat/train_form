@@ -7,10 +7,10 @@ const SeatMap = ({ selectedSeats, setSelectedSeats, filter }) => {
     if (selectedSeats.includes(seatNumber)) {
       setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
     } else {
-      if (selectedSeats.length < 7) {
+      if (selectedSeats.length < 80) {
         setSelectedSeats([...selectedSeats, seatNumber]);
       } else {
-        alert("You can only select up to 7 seats.");
+        alert("You can only select up to 80 seats.");
       }
     }
   };
